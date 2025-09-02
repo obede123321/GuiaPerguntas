@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 
+app.set("view engine",'ejs');
+
+
 app.get('/', (req, res) => {
-  res.send('Bem-vindo ao GuiaPerguntas!');
+  // res.send('Bem-vindo ao GuiaPerguntas!');
+  res.render("index");
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+app.listen(8080, () => {
+  console.log("Servidor rodando na porta");});
